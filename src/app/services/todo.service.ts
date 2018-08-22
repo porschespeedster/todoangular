@@ -5,8 +5,8 @@ import {Response} from '@angular/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
 
-//RxJS operator for mapping the observable
-//import 'rxjs/add/operator/map';
+// RxJS operator for mapping the observable
+// import 'rxjs/add/operator/map';
 
 @Injectable()
 export class TodoService {
@@ -19,30 +19,30 @@ export class TodoService {
   ) { }
 
 
-  //Create todo, takes a ToDo Object
+  // Create todo, takes a ToDo Object
   createTodo(todo: ToDo): Observable<any>{
-    //returns the observable of http post request 
+    // returns the observable of http post request 
     return this.http.post(`${this.todoUrl}`, todo);
   }
 
-  //Read todo, takes no arguments
+  // Read todo, takes no arguments
   getToDos(): Observable<ToDo[]>{
     return this.http.get(this.todoUrl).
     pipe(map((res:any)  => {
-      //Maps the response object sent from the server
-        
+      // Maps the response object sent from the server
+
       return res["data"].docs as ToDo[];
     }))
   }
-  //Update todo, takes a ToDo Object as parameter
+  // Update todo, takes a ToDo Object as parameter
   editTodo(todo:ToDo){
     let editUrl = `${this.todoUrl}`
-    //returns the observable of http put request 
+    // returns the observable of http put request 
     return this.http.put(editUrl, todo);
   }
 
   deleteTodo(id:string):any{
-    //Delete the object by the id
+    // Delete the object by the id
     let deleteUrl = `${this.todoUrl}/${id}`
     return this.http.delete(deleteUrl)
     .pipe(map((res:any)  => {
@@ -50,7 +50,7 @@ export class TodoService {
     }))
   }
 
-  //Default Error handling method.
+  // Default Error handling method.
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error); // for demo purposes only
     return Promise.reject(error.message || error);

@@ -1,6 +1,7 @@
 import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TodoService } from './services/todo.service';
+import {UserService} from './services/user.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -12,7 +13,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   {path: 'home', component: DashboardComponent },
-  { path: 'login', component: UserLoginComponent },
+  { path: 'userlogin', component: UserLoginComponent },
 ];
 
 @NgModule({
@@ -29,7 +30,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
-    TodoService
+    TodoService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })
