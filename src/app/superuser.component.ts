@@ -6,10 +6,10 @@ import { Router } from '@angular/router';
 
 @Component({
   // selector: 'app-user-login',
-  templateUrl: './login.component.html'
+  templateUrl: './superuser.component.html'
   // styleUrls: ['./app.component.scss']
 })
-export class UserLoginComponent implements OnInit {
+export class SuperUserComponent implements OnInit {
 
   constructor(
     // Private todoservice will be injected into the component by Angular Dependency Injector
@@ -20,22 +20,26 @@ export class UserLoginComponent implements OnInit {
   public newUser: User = new User();
   ngOnInit(): void {}
 
-
-  login() {
+  createProductOwner() {
     this.userService.login(this.newUser)
-    .subscribe((res) => {
-        var username = res.data[0].username;
-        
-        if(res.data[0].role === 'super'){
-          this.router.navigate(['super']);
-        }else{
-          this.router.navigate(['home']);
-        }  
-
+    .subscribe((res) => {  
+          
+        this.router.navigate(['createpo']);
 
     });
 
   }
+
+  createApplicationUser() {
+    this.userService.login(this.newUser)
+    .subscribe((res) => {
+      
+      this.router.navigate(['createau']);
+
+    });
+
+  }
+  
 
 }
 

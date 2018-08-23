@@ -6,9 +6,9 @@ import {UserLoginComponent} from './userlogin.component';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './index.component.html'
-  // styleUrls: ['./app.component.scss']
-})
+  templateUrl: './index.component.html',
+  styleUrls: ['./app.component.scss','../../node_modules/bootstrap/scss/bootstrap.scss','../../node_modules/font-awesome/css/font-awesome.css']
+  })
 export class AppComponent implements OnInit {
 
   constructor(
