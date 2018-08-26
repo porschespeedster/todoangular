@@ -7,10 +7,10 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import {UserLoginComponent} from './userlogin.component';
-import {SuperUserComponent} from './superuser.component'
+import {SuperUserComponent} from './superuser.component';
 import {DashboardComponent} from './dashboard.component';
-import {ProductOwnerComponent} from './productowner.component'
-import {ApplicationUserComponent} from './applicationuser.component'
+import {ProductOwnerComponent} from './productowner.component';
+import {ApplicationUserComponent} from './applicationuser.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 const appRoutes: Routes = [
