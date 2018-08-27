@@ -110,36 +110,7 @@
         <div class="container-fluid">
           <div class="row">
             
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="card card-stats">
-                <div class="card-header card-header-success card-header-icon">
-                  <div class="card-icon">
-                    <i class="fa fa-building"></i>
-                  </div>
-                  <p class="card-category">(About Your Organisation)</p>
-                  <h3 class="card-title">Company Profile
-                    
-                  </h3>
-                </div>
-                <div class="card-footer" >
-                  <div class="stats" >
-                      <button type="submit" (click)="createCompanyProfile()" class="btn btn-success">Create</button>
-                  </div>
-                  
-                <div class="stats" >
-                      <button type="submit" (click)="viewCompanyProfile()" class="btn btn-success">View</button>
-                </div>
-                <div class="stats" *ngIf="companyList" >
-                  <select class="form-control">
-                    <option >--Select Company--</option>
-                    <option *ngFor="let company of companyList">{{company.name}}</option>                    
-                </select>
-                </div>
-                </div>
-                
-              </div>
-            </div>  
-                
+              
                 <div class="col-lg-3 col-md-3 col-sm-3">
                   <div class="card card-stats">
                     <div class="card-header card-header-success card-header-icon" style="align-self: center;">
@@ -150,7 +121,7 @@
                     </div>
                     <div class="card-footer" style="align-self: center;">
                       <div class="stats" >
-                          <button type="submit" (click)="createProductOwner()" class="btn btn-success">Create Product Owner</button>
+                          <button type="submit" (click)="createCompanyProfile()" class="btn btn-success">Create Company Profile</button>
                       </div>
                     </div>
                   </div>
@@ -167,7 +138,7 @@
                     </div>
                     <div class="card-footer" style="align-self: center;">
                       <div class="stats" >
-                          <button type="submit" (click)="createApplicationUser()" class="btn btn-success">Create Application user</button>
+                          <button type="submit" (click)="createSuperUser()" class="btn btn-success">Create Super User</button>
                       </div>
                     </div>
                   </div>

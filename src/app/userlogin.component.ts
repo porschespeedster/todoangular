@@ -24,10 +24,15 @@ export class UserLoginComponent implements OnInit {
   login() {
     this.userService.login(this.newUser)
     .subscribe((res) => {
+
         var username = res.data[0].username;
-        
-        if(res.data[0].role === 'super'){
+          
+        console.log(res.data[0].role)
+
+        if(res.data[0].role == 'super' || res.data[0].role == 'superuser'){
           this.router.navigate(['super']);
+        }else if(res.data[0].role == 'cmmadmin'){
+          this.router.navigate(['cmmadmin']);  
         }else{
           this.router.navigate(['home']);
         }  

@@ -1,0 +1,168 @@
+<!-- <div > -->
+    
+    <!-- <form>      
+        <table class="table">
+          <tr>
+        <div>
+          <input type="text" name="username" id="username"  placeholder="Username" class="form-control">
+        </div>
+          </tr>
+          <tr>
+        <div >
+          <input type ="password" name="password" id="password"  placeholder="Password" class="form-control"
+            id="description">
+        </div>
+      </tr>
+      <tr>
+        <div >
+          <button type="submit" class="submit btn btn-primary" (click)="login()">Log In</button>          
+        </div>
+      </tr>
+      </table>      
+    </form> -->
+    
+      <!-- Navbar -->
+
+      <div class="sidebar" data-color="purple" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
+        <!--
+          Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+  
+          Tip 2: you can also add an image using data-image tag
+      -->
+        <div class="logo">
+          <a href="#" class="simple-text logo-normal">
+            <img src="../assets/img/cog.png" height="40" width="160">
+          </a>
+        </div>
+        <div class="sidebar-wrapper">
+          <ul class="nav" >
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/home">
+                <i class="material-icons">dashboard</i>
+                <p>Dashboard</p>
+              </a>
+            </li>
+              <li class="nav-item active">
+                <a class="nav-link" routerLink="/userlogin">
+                  <i class="material-icons">person</i>
+                  <p>Superuser</p>
+                </a>
+                </li> 
+          </ul>   
+        </div>
+      </div>
+
+
+      <div class="main-panel" style="background-color: #eee">
+        
+        <div class="content">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="card">
+                  <div class="card-header card-header-primary">
+                    <h4 class="card-title">Create Company Profile</h4>
+                    <!-- <p class="card-category">Complete your profile</p> -->
+                  </div>
+                  <div class="card-body" *ngIf="isView == create">
+                      <form>
+                          <div class="row">                        
+                            <div class="col-md-6">
+                               <div class="form-group">
+                                  <label class="bmd-label-floating">Name</label>
+                                  <input type="text" name="username" id="fullname"  [(ngModel)]="newCompany.name"  class="form-control">
+                                </div>
+                              </div>
+                          </div>
+                          <div class="row">                        
+                              <div class="col-md-6">
+                                 <div class="form-group">
+                                    <label class="bmd-label-floating">Address Line 1</label>
+                                    <input type="text" name="username" id="emailname"  [(ngModel)]="newCompany.addressl1"  class="form-control">
+                                  </div>
+                                </div>
+                          </div>
+                          <div class="row">                        
+                            <div class="col-md-6">
+                               <div class="form-group">
+                                  <label class="bmd-label-floating">Address Line 2</label>
+                                  <input type="text" name="username" id="emailname"  [(ngModel)]="newCompany.addressl2"  class="form-control">
+                                </div>
+                              </div>
+                          </div>
+                          <div class="row">                        
+                            <div class="col-md-6">
+                               <div class="form-group">
+                                  <label class="bmd-label-floating">City</label>
+                                  <input type="text" name="username" id="emailname"  [(ngModel)]="newCompany.city"  class="form-control">
+                                </div>
+                              </div>
+                          </div>
+                          <div class="row">                        
+                            <div class="col-md-6">
+                               <div class="form-group">
+                                  <label class="bmd-label-floating">Pincode</label>
+                                  <input type="text" name="username" id="emailname"  [(ngModel)]="newCompany.pincode"  class="form-control">
+                                </div>
+                              </div>
+                          </div>
+                          <div class="row">                        
+                            <div class="col-md-6">
+                               <div class="form-group">
+                                  <label class="bmd-label-floating">State</label>
+                                  <input type="text" name="username" id="emailname"  [(ngModel)]="newCompany.state"  class="form-control">
+                                </div>
+                              </div>
+                          </div>
+                          <div class="row">                        
+                            <div class="col-md-6">
+                               <div class="form-group">
+                                  <label class="bmd-label-floating">Country</label>
+                                  <input type="text" name="username" id="emailname"  [(ngModel)]="newCompany.country"  class="form-control">
+                                </div>
+                              </div>
+                          </div>
+                          
+                          <button type="submit" (click)="create()" class="btn btn-primary pull-right">Create</button>
+                          <div class="clearfix"></div>
+                        </form>
+                  </div>
+
+                  <div *ngIf="isView == view">
+                     <p>View</p> 
+                  </div>
+
+
+                </div>
+              </div>
+               
+            </div>
+          </div>
+        </div>
+        <footer class="footer">
+          <div class="container-fluid">
+            <nav class="float-left">
+              <ul>
+                <li>
+                  <a href="https://www.creative-tim.com">
+                    Company name
+                  </a>
+                </li>
+                <li>
+                  <a href="https://creative-tim.com/presentation">
+                    About Us
+                  </a>
+                </li>
+                 
+                 
+              </ul>
+            </nav> 
+            <div class="copyright float-right">
+              
+               
+               
+              
+            </div>
+          </div>
+        </footer>
+       </div>
