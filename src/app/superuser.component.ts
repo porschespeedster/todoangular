@@ -6,6 +6,7 @@ import Company from './models/company.model';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Variable } from '@angular/compiler/src/render3/r3_ast';
+import {CompanyComponent} from './components/company_component/company.component'
 
 @Component({
   // selector: 'app-user-login',
@@ -18,12 +19,15 @@ export class SuperUserComponent implements OnInit {
     // Private todoservice will be injected into the component by Angular Dependency Injector
     private userService: UserService,    
     private companyService: CompanyService,
-    private router: Router    
+    private router: Router,
+    private companyComponent:CompanyComponent
 
   ) { }
 
   companyList: Company[];
-  isView: Variable;
+
+  
+
   
 
   public newUser: User = new User();
@@ -38,6 +42,7 @@ export class SuperUserComponent implements OnInit {
 
   
   createCompanyProfile() {    
+    //this.companyComponent.isView = false;
     this.userService.login(this.newUser)
     .subscribe((res) => {  
           
@@ -47,14 +52,11 @@ export class SuperUserComponent implements OnInit {
 
   } 
 
-  viewCompanyProfile() {    
-    this.companyService.getCompanies()
-    .subscribe((companies) => {  
-      this.isView = 'true';
-      this.router.navigate(['createcp']);   
-
-    });   
-
+  viewCompanyProfile(companylist) {    
+    console.log('Inside super component')
+    console.log(companylist)
+    //this.companyComponent.isView = true;
+    this.companyComponent.viewCompanyProfile()
   }
   
 

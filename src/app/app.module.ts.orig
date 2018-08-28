@@ -12,8 +12,11 @@ import {SuperUserComponent} from './superuser.component';
 import {DashboardComponent} from './dashboard.component';
 import {ProductOwnerComponent} from './productowner.component';
 import {ApplicationUserComponent} from './applicationuser.component';
+<<<<<<< HEAD
 import {Administrator} from './admin.component';
 import {CompanyComponent} from './components/company_component/company.component';
+=======
+>>>>>>> 498dcef791b84325b747ed38cd5a7143babf1bff
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 const appRoutes: Routes = [
@@ -48,8 +51,7 @@ const appRoutes: Routes = [
   providers: [
     TodoService,
     UserService,
-    CompanyService,
-    CompanyComponent    
+    CompanyService
   ],
   bootstrap: [AppComponent]
 })

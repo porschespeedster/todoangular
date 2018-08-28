@@ -55,7 +55,7 @@
 
       <div class="main-panel" style="background-color: #eee">
         
-        <div class="content">
+        <div class="content" *ngIf="!isView">
           <div class="container-fluid">
             <div class="row">
               <div class="col-md-6">
@@ -64,7 +64,7 @@
                     <h4 class="card-title">Create Company Profile</h4>
                     <!-- <p class="card-category">Complete your profile</p> -->
                   </div>
-                  <div class="card-body" *ngIf="isView == create">
+                  <div class="card-body">
                       <form>
                           <div class="row">                        
                             <div class="col-md-6">
@@ -126,18 +126,16 @@
                           <button type="submit" (click)="create()" class="btn btn-primary pull-right">Create</button>
                           <div class="clearfix"></div>
                         </form>
-                  </div>
-
-                  <div *ngIf="isView == view">
-                     <p>View</p> 
-                  </div>
-
+                  </div>           
 
                 </div>
               </div>
                
             </div>
           </div>
+        </div>
+        <div class="content" *ngIf="isView">
+          <p>View</p>
         </div>
         <footer class="footer">
           <div class="container-fluid">
@@ -164,5 +162,5 @@
               
             </div>
           </div>
-        </footer>
+        </footer>        
        </div>

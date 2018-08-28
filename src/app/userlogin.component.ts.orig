@@ -24,6 +24,7 @@ export class UserLoginComponent implements OnInit {
   login() {
     this.userService.login(this.newUser)
     .subscribe((res) => {
+<<<<<<< HEAD
 
         var username = res.data[0].username;
           
@@ -34,6 +35,13 @@ export class UserLoginComponent implements OnInit {
         }else if(res.data[0].role == 'cmmadmin'){
           this.router.navigate(['cmmadmin']);  
         }else{
+=======
+        // var username = res.data[0].username;
+
+        if ( res.data[0].role === 'superuser') {
+          this.router.navigate(['super']);
+        } else {
+>>>>>>> 498dcef791b84325b747ed38cd5a7143babf1bff
           this.router.navigate(['home']);
         }
 
