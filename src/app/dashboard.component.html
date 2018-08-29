@@ -54,6 +54,26 @@
 
 
       <div class="main-panel" style="background-color: #eee">
+
+      <div class="main-panel" style="background-color: #eee">
+        <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+          <div class="container-fluid">
+            
+            <div class="collapse navbar-collapse justify-content-end">
+              
+              <ul class="navbar-nav"> 
+                
+                <li class="nav-item">
+                  <a class="nav-link">
+                    <i class="material-icons">person</i>
+                    <small  routerLink="/userlogin" style="color:green" *ngIf="!loggedInUser">Login</small>                    
+                    <small style="color:red" *ngIf="loggedInUser">Logout</small>                    
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
       <!-- Navbar -->
       <!-- <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">

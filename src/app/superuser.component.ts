@@ -25,13 +25,12 @@ export class SuperUserComponent implements OnInit {
   ) { }
 
   companyList: Company[];
-
   
-
   
 
   public newUser: User = new User();
-  
+  public companyName: String;
+  public loggedInUser: String = localStorage.getItem("loggedinuserid");  
 
   ngOnInit(): void {// At component initialization the
     this.companyService.getCompanies()
@@ -40,17 +39,38 @@ export class SuperUserComponent implements OnInit {
       this.companyList = companies;        
     });}
 
+  public isView:Boolean = true;
+    
+
+  create() {    
+      //CompanyComponent.isView = false;
+
+    let cmpName = this.companyName
+    let cmpid:Number = 0;
+
+    console.log(this.newUser.cmpid)
+    console.log(this.companyName)
+
+      this.companyList.forEach( function (value) {
+          if(value.name == cmpName){
+            cmpid = value.cmpid;
+          }
+      })
+
+      console.log(cmpid)
+      
+
+      console.log("Inside super component user")
+      this.newUser.role = 'superuser';
+      this.newUser.createdbyid = parseInt(localStorage.getItem("loggedinuserid"));
+      this.newUser.cmpid = cmpid;
+      this.userService.create(this.newUser)
+      .subscribe((res) => {
+        console.log("Inside super component user service response")
+      });
   
-  createCompanyProfile() {    
-    //this.companyComponent.isView = false;
-    this.userService.login(this.newUser)
-    .subscribe((res) => {  
-          
-      this.router.navigate(['createcp']);   
-
-    });   
-
-  } 
+    }
+  
 
   viewCompanyProfile(companylist) {    
     console.log('Inside super component')

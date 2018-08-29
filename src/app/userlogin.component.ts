@@ -32,6 +32,7 @@ export class UserLoginComponent implements OnInit {
         if(res.data[0].role == 'super' || res.data[0].role == 'superuser'){
           this.router.navigate(['super']);
         }else if(res.data[0].role == 'cmmadmin'){
+          localStorage.setItem("loggedinuserid",res.data[0].uid);
           this.router.navigate(['cmmadmin']);  
         }else{
           this.router.navigate(['home']);
