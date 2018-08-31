@@ -23,14 +23,14 @@
     
       <!-- Navbar -->
 
-      <div class="sidebar" data-color="purple" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
+      <div class="sidebar" data-color="green" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
         <!--
           Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
   
           Tip 2: you can also add an image using data-image tag
       -->
         <div class="logo">
-          <a href="#" class="simple-text logo-normal">
+          <a href="#"  class="simple-text logo-normal">
             <img src="../assets/img/cog.png" height="40" width="160">
           </a>
         </div>
@@ -56,10 +56,17 @@
       <div class="main-panel" style="background-color: #eee">
         <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
           <div class="container-fluid">
+
+              
+              <a href="#" class="simple-text logo-normal">
+                  <img [src]="companyLogo" height="40" width="40">
+              </a>
             
             <div class="collapse navbar-collapse justify-content-end">
               
               <ul class="navbar-nav"> 
+
+                  
                 
                 <li class="nav-item">
                   <a class="nav-link" href="#">
@@ -72,8 +79,7 @@
             </div>
           </div>
         </nav>
-      <!-- End Navbar -->
-      
+      <!-- End Navbar --> 
             
         
                 
@@ -85,139 +91,74 @@
               
                 <div class="content">
                   <div class="container-fluid">
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="card">
-                          <div class="card-header card-header-primary" *ngIf="createSuv">
-                            <h4 class="card-title">Create Super User</h4>
-                            <!-- <p class="card-category">Complete your profile</p> -->
-                          </div>
-                          <div class="card-body">
-                              <form>
-                                  <div class="row">                        
-                                    <div class="col-md-6">
-                                       <div class="form-group">
-                                          <label class="bmd-label-floating">Full Name</label>
-                                          <input type="text" name="fullname" id="fullname"  [(ngModel)]="newUser.fullname"  class="form-control">
-                                        </div>
-                                      </div>
-                                  </div>
-                                  <div class="row">                        
-                                      <div class="col-md-6">
-                                         <div class="form-group">
-                                            <label class="bmd-label-floating">Username</label>
-                                            <input type="text" name="username" id="emailname"  [(ngModel)]="newUser.username"  class="form-control">
-                                          </div>
-                                        </div>
-                                  </div>
-                                  <div class="row">                        
-                                    <div class="col-md-6">
-                                       <div class="form-group">
-                                          <label class="bmd-label-floating">Password</label>
-                                          <input type="text" name="username" id="emailname"  [(ngModel)]="newUser.password"  class="form-control">
-                                        </div>
-                                      </div>
-                                  </div>
-                                  <div class="row">                        
-                                    <div class="col-md-6">
-                                       <div class="form-group">
-                                          <label class="bmd-label-floating">Email</label>
-                                          <input type="text" name="username" id="emailname"  [(ngModel)]="newUser.email"  class="form-control">
-                                        </div>
-                                      </div>
-                                  </div>
-                                  <div class="row">                        
-                                    <div class="col-md-6">
-                                       <div class="form-group">
-                                          <label class="bmd-label-floating">Contact No.</label>
-                                          <input type="text" name="username" id="emailname"  [(ngModel)]="newUser.contactnumber"  class="form-control">
-                                        </div>
-                                      </div>
-                                  </div>                                  
-                                  <div class="row">                        
-                                    <div class="col-md-6">
-                                       <div class="form-group">                                        
-                                          <select id="lister" name="companylist" class="form-control" [(ngModel)]="companyName">
-                                            <option >--Select Company--</option>
-                                            <option *ngFor="let company of companyList">{{company.name}}</option>                    
-                                          </select>
+                      <div class="row">
 
-                                        </div>
-                                      </div>
+                          <div class="col-lg-3 col-md-3 col-sm-3">
+                              <div class="card card-stats">
+                                <div class="card-header card-header-success card-header-icon" >
+                                  
+                                  <div class="card-icon">                            
+                                    <i class="fa fa-user"></i>
                                   </div>
+                                  <p class="card-category">(Organisation's Business Domain)</p>
+                              <h3 class="card-title">Business Domain
+                                
+                              </h3>
+                                </div>
+                                <div class="card-footer" style="align-self: center;">
+                                  <div class="stats" >
+                                      <button type="submit" (click)="toApplicationDomain()" class="btn btn-success">click here for more information</button>                          
+                                  </div>
+                                </div>
+                              </div>
+                          </div> 
+                        
+                          
+                        <div class="col-lg-3 col-md-3 col-sm-3">
+                          <div class="card card-stats">
+                            <div class="card-header card-header-success card-header-icon">
+                              <div class="card-icon">
+                                <i class="fa fa-building"></i>
+                              </div>
+                              <p class="card-category">(Organisation's IT Application)</p>
+                              <h3 class="card-title">Applications                                
+                              </h3>
+                            </div>
+                            <div class="card-footer" style="align-self: center;">
+                              <div class="stats" >
+                                  <button type="submit" (click)="toApplication()" class="btn btn-success">click here for more information</button>
+                              </div>
+                            </div>
+                           </div>
+                        </div>  
+            
+                            <div class="col-lg-3 col-md-3 col-sm-3">
+                              <div class="card card-stats">
+                                <div class="card-header card-header-success card-header-icon" >
                                   
-                                  
-                                  
-                                  <button type="submit" (click)="create()" class="btn btn-primary pull-right">Create</button>
-                                  <div class="clearfix"></div>
-                                </form>
-                          </div>           
-        
-                        </div>
+                                  <div class="card-icon">                            
+                                    <i class="fa fa-user"></i>
+                                  </div>
+                                  <p class="card-category">(Organisation's Product Owner)</p>
+                              <h3 class="card-title">Product Owner
+                                
+                              </h3>
+                                </div>
+                                <div class="card-footer" style="align-self: center;">
+                                  <div class="stats" >
+                                      <button type="submit" (click)="toSuperUser()" class="btn btn-success">click here for more information</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div> 
+                           
+                          
+                        
+                         
                       </div>
-                       
-                    </div>
                   </div>
                 </div>   
 
-      <div class="content" *ngIf="!createSuv">
-        <div class="container-fluid">
-          <div class="row">
-            
-              
-            <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="card card-stats">
-                <div class="card-header card-header-success card-header-icon">
-                  <div class="card-icon">
-                    <i class="fa fa-building"></i>
-                  </div>
-                  <p class="card-category">(About Your Organisation)</p>
-                  <h3 class="card-title">Company Profile
-                    
-                  </h3>
-                </div>
-                <div class="card-footer" >
-                  <div class="stats" >
-                      <button type="submit" (click)="createCompanyProfile()" class="btn btn-success">Create</button>
-                  </div>
-                  
-                <div class="stats" >
-                      <button type="submit" (click)="viewCompanyProfile('lister.value')" class="btn btn-success">View</button>
-                </div>
-                <div class="stats" *ngIf="companyList" >
-                  <select id="lister" name="companylist" class="form-control">
-                    <option >--Select Company--</option>
-                    <option *ngFor="let company of companyList">{{company.name}}</option>                    
-                  </select>
-                </div>
-                </div>
-                
-              </div>
-            </div>  
-
-                <div class="col-lg-3 col-md-3 col-sm-3">
-                  <div class="card card-stats">
-                    <div class="card-header card-header-success card-header-icon" style="align-self: center;">
-                      
-                      <div class="card-icon">                            
-                        <i class="fa fa-user"></i>
-                      </div>
-                      
-                    </div>
-                    <div class="card-footer" style="align-self: center;">
-                      <div class="stats" >
-                          <button type="submit" (click)="createSuperUser()" class="btn btn-success">Create Super User</button>
-                      </div>
-                    </div>
-                  </div>
-                </div> 
-               
-              
-            
-             
-          </div>
-        </div>
-      </div>
          
       <footer class="footer">
         <div class="container-fluid">

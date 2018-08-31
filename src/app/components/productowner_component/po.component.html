@@ -45,7 +45,7 @@
               <li class="nav-item active">
                 <a class="nav-link" routerLink="/userlogin">
                   <i class="material-icons">person</i>
-                  <p>Company Profile</p>
+                  <p>Product Owner</p>
                 </a>
                 </li> 
           </ul>   
@@ -64,27 +64,22 @@
                   <div class="card card-stats">
                     <div class="card-header card-header-success card-header-icon">
                       <div class="card-icon">
-                        <i class="fa fa-building"></i>
+                        <i class="fa fa-user"></i>
                       </div>
-                      <p class="card-category">(About Your Organisation)</p>
-                      <h3 class="card-title">Company Profile
+                      <p class="card-category">(PO)</p>
+                      <h3 class="card-title">Product Owner
                         
                       </h3>
                     </div>
-                    <div class="card-footer" >
+                    <div class="card-footer" style="align-self: center">
                       <div class="stats" >
-                          <button  (click)="createShow = !createShow; show = !show" class="btn btn-success">Create</button>
+                          <button  (click)="createShow = !createShow; show = !show" class="btn btn-success">Create PO</button>
                       </div>
                       
                     <div class="stats" >
-                          <button  (click)="viewShow = !viewShow; show = !show" class="btn btn-success">View</button>
+                          <button  (click)="viewShow = !viewShow; show = !show" class="btn btn-success">View PO</button>
                     </div>
-                    <div class="stats" *ngIf="companyList" >
-                      <select id="lister" name="companylist" class="form-control">
-                        <option >--Select Company--</option>
-                        <option *ngFor="let company of companyList">{{company.name}}</option>                    
-                      </select>
-                    </div>
+                    
                     </div>
                     
                   </div>
@@ -97,7 +92,7 @@
               <div class="col-md-6">
                 <div class="card">
                   <div class="card-header card-header-primary">
-                    <h4 class="card-title">Create Company Profile</h4>
+                    <h4 class="card-title">Create Product Owner</h4>
                     <!-- <p class="card-category">Complete your profile</p> -->
                   </div>
                   <div class="card-body">

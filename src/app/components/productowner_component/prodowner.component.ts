@@ -7,19 +7,16 @@ import { Variable } from '@angular/compiler/src/render3/r3_ast';
 
 @Component({
   // selector: 'app-user-login',
-  templateUrl: './createcmp.component.html',
+  templateUrl: './po.component.html',
   
   // styleUrls: ['./app.component.scss']
 })
-export class CompanyComponent implements OnInit {
+export class ProductOwner implements OnInit {
   
   show:boolean = true;
   createShow:boolean = true;
   viewShow:boolean = true;
-
-
-  @Input() isCompanyView =  localStorage.getItem("isCompanyView")
-  @Input() isCreateCompany =  localStorage.getItem("isCompanyView")
+  
 
   constructor(
     // Private todoservice will be injected into the component by Angular Dependency Injector
@@ -38,17 +35,10 @@ export class CompanyComponent implements OnInit {
    
   ngOnInit(): void {
     this.companyService.getCompanies()
-    .subscribe(companies => {
-      // assign the todolist property to the proper http response
+    .subscribe(companies => {      
       this.companyList = companies;        
     });
-    // At component initialization the
-       //this.companyService.getCompanies()
-      // .subscribe(companies => {
-      //   // assign the todolist property to the proper http response
-      //   this.companyList = companies;
-      //   this.dummycompanyList = companies        
-      // });
+    
   }
   
 
@@ -72,6 +62,8 @@ export class CompanyComponent implements OnInit {
     });   
 
   }
+
+  
 
 }
 

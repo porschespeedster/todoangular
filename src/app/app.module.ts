@@ -3,6 +3,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TodoService } from './services/todo.service';
 import {UserService} from './services/user.service';
 import {CompanyService} from './services/company.service';
+import {DomainService} from './services/domain.service';
+import {ApplicationService} from './services/application.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -14,6 +16,9 @@ import {ProductOwnerComponent} from './productowner.component';
 import {ApplicationUserComponent} from './applicationuser.component';
 import {Administrator} from './admin.component';
 import {CompanyComponent} from './components/company_component/company.component';
+import {ProductOwner} from './components/productowner_component/prodowner.component';
+import {DomainComponent} from './components/domain_component/domain.component';
+import {ApplicationComponent} from './components/application_component/application.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 const appRoutes: Routes = [
@@ -24,7 +29,10 @@ const appRoutes: Routes = [
   { path: 'createpo', component: ProductOwnerComponent },
   { path: 'createau', component: ApplicationUserComponent },
   { path: 'cmmadmin', component: Administrator },
-  { path: 'createcp', component: CompanyComponent }
+  { path: 'createcp', component: CompanyComponent },
+  { path: 'po', component: ProductOwner },
+  { path: 'domain', component: DomainComponent },
+  { path: 'app', component:ApplicationComponent}
 ];
 
 @NgModule({
@@ -36,7 +44,10 @@ const appRoutes: Routes = [
     ApplicationUserComponent,
     SuperUserComponent,
     Administrator,
-    CompanyComponent
+    CompanyComponent,
+    ProductOwner,
+    DomainComponent,
+    ApplicationComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +60,9 @@ const appRoutes: Routes = [
     TodoService,
     UserService,
     CompanyService,
-    CompanyComponent    
+    CompanyComponent,
+    DomainService,
+    ApplicationService    
   ],
   bootstrap: [AppComponent]
 })

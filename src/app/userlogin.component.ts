@@ -28,11 +28,12 @@ export class UserLoginComponent implements OnInit {
         var username = res.data[0].username;
           
         console.log(res.data[0].role)
+        localStorage.setItem("loggedinuserid",res.data[0].uid);
+        localStorage.setItem("loggedinusercmpid",res.data[0].cmpid);
 
         if(res.data[0].role == 'super' || res.data[0].role == 'superuser'){
           this.router.navigate(['super']);
-        }else if(res.data[0].role == 'cmmadmin'){
-          localStorage.setItem("loggedinuserid",res.data[0].uid);
+        }else if(res.data[0].role == 'cmmadmin'){          
           this.router.navigate(['cmmadmin']);  
         }else{
           this.router.navigate(['home']);

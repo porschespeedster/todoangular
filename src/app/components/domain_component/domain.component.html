@@ -45,7 +45,7 @@
               <li class="nav-item active">
                 <a class="nav-link" routerLink="/userlogin">
                   <i class="material-icons">person</i>
-                  <p>Company Profile</p>
+                  <p>Domain</p>
                 </a>
                 </li> 
           </ul>   
@@ -64,27 +64,22 @@
                   <div class="card card-stats">
                     <div class="card-header card-header-success card-header-icon">
                       <div class="card-icon">
-                        <i class="fa fa-building"></i>
+                        <i class="fa fa-user"></i>
                       </div>
-                      <p class="card-category">(About Your Organisation)</p>
-                      <h3 class="card-title">Company Profile
+                      <p class="card-category">(Organisations Business Domain)</p>
+                      <h3 class="card-title">Business Domain
                         
                       </h3>
                     </div>
-                    <div class="card-footer" >
+                    <div class="card-footer" style="align-self: center">
                       <div class="stats" >
-                          <button  (click)="createShow = !createShow; show = !show" class="btn btn-success">Create</button>
+                          <button  (click)="createShow = !createShow; show = !show" class="btn btn-success">Create Domain</button>
                       </div>
                       
                     <div class="stats" >
-                          <button  (click)="viewShow = !viewShow; show = !show" class="btn btn-success">View</button>
+                          <button  (click)="viewShow = !viewShow; show = !show" class="btn btn-success">View Doamin</button>
                     </div>
-                    <div class="stats" *ngIf="companyList" >
-                      <select id="lister" name="companylist" class="form-control">
-                        <option >--Select Company--</option>
-                        <option *ngFor="let company of companyList">{{company.name}}</option>                    
-                      </select>
-                    </div>
+                    
                     </div>
                     
                   </div>
@@ -97,7 +92,7 @@
               <div class="col-md-6">
                 <div class="card">
                   <div class="card-header card-header-primary">
-                    <h4 class="card-title">Create Company Profile</h4>
+                    <h4 class="card-title">Create Domain</h4>
                     <!-- <p class="card-category">Complete your profile</p> -->
                   </div>
                   <div class="card-body">
@@ -106,58 +101,31 @@
                             <div class="col-md-6">
                                <div class="form-group">
                                   <label class="bmd-label-floating">Name</label>
-                                  <input type="text" name="username" id="fullname"  [(ngModel)]="newCompany.name"  class="form-control">
+                                  <input type="text" name="username" id="fullname"  [(ngModel)]="newDomain.name"  class="form-control">
                                 </div>
                               </div>
                           </div>
                           <div class="row">                        
                               <div class="col-md-6">
                                  <div class="form-group">
-                                    <label class="bmd-label-floating">Address Line 1</label>
-                                    <input type="text" name="username" id="emailname"  [(ngModel)]="newCompany.addressl1"  class="form-control">
+                                    <label class="bmd-label-floating">Description</label>
+                                    <input type="text" name="username" id="emailname"  [(ngModel)]="newDomain.description"  class="form-control">
                                   </div>
                                 </div>
                           </div>
-                          <div class="row">                        
-                            <div class="col-md-6">
-                               <div class="form-group">
-                                  <label class="bmd-label-floating">Address Line 2</label>
-                                  <input type="text" name="username" id="emailname"  [(ngModel)]="newCompany.addressl2"  class="form-control">
-                                </div>
-                              </div>
-                          </div>
-                          <div class="row">                        
-                            <div class="col-md-6">
-                               <div class="form-group">
-                                  <label class="bmd-label-floating">City</label>
-                                  <input type="text" name="username" id="emailname"  [(ngModel)]="newCompany.city"  class="form-control">
-                                </div>
-                              </div>
-                          </div>
-                          <div class="row">                        
-                            <div class="col-md-6">
-                               <div class="form-group">
-                                  <label class="bmd-label-floating">Pincode</label>
-                                  <input type="text" name="username" id="emailname"  [(ngModel)]="newCompany.pincode"  class="form-control">
-                                </div>
-                              </div>
-                          </div>
-                          <div class="row">                        
-                            <div class="col-md-6">
-                               <div class="form-group">
-                                  <label class="bmd-label-floating">State</label>
-                                  <input type="text" name="username" id="emailname"  [(ngModel)]="newCompany.state"  class="form-control">
-                                </div>
-                              </div>
-                          </div>
-                          <div class="row">                        
-                            <div class="col-md-6">
-                               <div class="form-group">
-                                  <label class="bmd-label-floating">Country</label>
-                                  <input type="text" name="username" id="emailname"  [(ngModel)]="newCompany.country"  class="form-control">
-                                </div>
-                              </div>
-                          </div>
+
+                          <div class="row">
+                          <div class="col-md-6">
+                            <div class="form-group">                                       
+                               <label class="bmd-label-floating">Organisation</label> 
+                               <select id="lister" name="companylist" class="form-control" [(ngModel)]="companyName">
+                                 <option >--Select Company--</option>
+                                 <option >{{company.name}}</option>                    
+                               </select>
+
+                             </div>
+                           </div>                              
+                          </div>                          
                           
                           <button type="submit" (click)="create()" class="btn btn-primary pull-right">Create</button>
                           <button (click)="createShow = !createShow; show = ! show" class="btn btn-primary pull-left">Back</button>
